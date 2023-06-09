@@ -1,8 +1,15 @@
-import React from "react";
-import "./App.css";
+import React, { useEffect } from "react";
+import { useActions } from "./hooks/actions";
+import Header from "./components/Header";
 
 function App() {
-  return <div></div>;
+  const { getPosts } = useActions();
+
+  useEffect(() => {
+    getPosts();
+  }, []);
+
+  return <Header />;
 }
 
 export default App;
